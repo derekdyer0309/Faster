@@ -1,15 +1,16 @@
 import React from "react";
-import { TextInput, View, ImagePropTypes } from "react-native";
+import { View } from "react-native";
 import { ButtonText, ButtonContainer } from "../styles/ButtonStyles";
 
 export default function FastInput(props) {
-  <View>
-    <TextInput />
-    <ButtonContainer
-      onPress={() => alert("Hi")}
-      backgroundColor={props.backgroundColor}
-    >
-      <ButtonText textColor={props.textColor}>{props.text}</ButtonText>
-    </ButtonContainer>
-  </View>;
+    return (
+        <View>
+        <ButtonContainer
+          onPress={() => alert("Hi")}
+          backgroundColor={props.backgroundColor}
+        >
+          <ButtonText textColor={props.textColor}>{props.text}</ButtonText>
+        </ButtonContainer>
+      </View>
+    )
 }
