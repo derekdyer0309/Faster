@@ -29,6 +29,7 @@ export default function App() {
           text="Add Fast"
           textColor="#ffffff"
           backgroundColor="#3c4560"
+          modal = {false}
         />
         {/* <FastList /> */}
       </Container>

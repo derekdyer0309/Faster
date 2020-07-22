@@ -11,6 +11,9 @@ import {
 const CreateFast = (props) => {
 
   const [modalVisible, setModalVisible] = useState(props.modal);
+  const [fast, setFast] = useState({})
+
+  console.log('This is modalVisible on load: ', modalVisible)
 
   return (
     <View style={styles.centeredView}>
@@ -30,6 +33,7 @@ const CreateFast = (props) => {
               style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
               onPress={() => {
                 setModalVisible(!modalVisible);
+                console.log('this is modal visible on hide: ', modalVisible)
               }}
             >
               <Text style={styles.textStyle}>Complete</Text>
