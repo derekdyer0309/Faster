@@ -10,17 +10,14 @@ import {
 
 const CreateFast = (props) => {
 
-  const [modalVisible, setModalVisible] = useState(props.modal);
   const [fast, setFast] = useState({})
-
-  console.log('This is modalVisible on load: ', modalVisible)
 
   return (
     <View style={styles.centeredView}>
       <Modal
         animationType="fade"
         transparent={true}
-        visible={modalVisible}
+        visible={props.modal}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
         }}
@@ -31,10 +28,7 @@ const CreateFast = (props) => {
 
             <TouchableHighlight
               style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
-              onPress={() => {
-                setModalVisible(!modalVisible);
-                console.log('this is modal visible on hide: ', modalVisible)
-              }}
+              onPress={props.toggle}
             >
               <Text style={styles.textStyle}>Complete</Text>
             </TouchableHighlight>

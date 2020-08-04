@@ -4,13 +4,12 @@ import { ButtonText, ButtonContainer } from "../styles/ButtonStyles";
 import CreateFast from "./CreateFast";
 
 export default function FastInput(props) {
-  const [modal, setModal] = useState(props.modal);
-  
-  console.log('This is modal from FastInput.js on load: ', modal)
-  
-  const addFast = (e) => {
+
+  const [modal, setModal] = useState(false);
+    
+  const toggleModal = (e) => {
     setModal(!modal);
-    console.log('modal changed: ', modal)
+    return modal
   };
 
   return (
@@ -21,7 +20,7 @@ export default function FastInput(props) {
       >
         <ButtonText textColor={props.textColor}>{props.text}</ButtonText>
       </ButtonContainer>
-      <CreateFast modal={modal} />
+      <CreateFast modal={modal} toggle={toggleModal} />
     </View>
   );
 }
